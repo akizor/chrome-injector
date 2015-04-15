@@ -1,0 +1,69 @@
+{
+  "name": "Website Injector",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Altereaza pagini existente.",
+  "homepage_url": "http://www.artgames.ro",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "page": "src/bg/background.html",
+    "persistent": true
+  },
+  "options_page": "src/options_custom/index.html",
+  "page_action": {
+    "default_icon": "icons/icon19.png",
+    "default_title": "Injector",
+    "default_popup": "src/page_action/page_action.html"
+  },
+  "permissions": [
+    "bookmarks",
+    "chrome://favicon/",
+    "clipboardRead",
+    "clipboardWrite",
+    "contentSettings",
+    "contextMenus",
+    "cookies",
+    "tts",
+    "ttsEngine",
+    "history",
+    "idle",
+    "management",
+    "notifications",
+    "tabs",
+    "geolocation"
+  ],
+  "omnibox": {
+    "keyword": "injector"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://www.990.ro/*"
+      ],
+      "js": [
+        "src/inject/990/inject.js"
+      ]
+    },
+    {
+      "matches": [
+        "http://superweb.rol.ro/video/*"
+      ],
+      "js": [
+        "src/inject/superweb/inject.js"
+      ]
+    },
+    {
+      "matches": [
+        "http://www.jqueryrain.com/*"
+      ],
+      "js": [
+        "src/inject/jqueryrain/inject.js"
+      ]
+    }
+  ]
+}
