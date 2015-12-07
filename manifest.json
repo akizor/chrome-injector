@@ -64,6 +64,17 @@
       "js": [
         "src/inject/jqueryrain/inject.js"
       ]
+    },
+    {
+      "matches": [
+        "http://www.magentocommerce.com/*"
+      ],
+      "js": [
+        "src/inject/magentoconnect/inject.js"
+      ],
+      "css": [
+        "src/inject/magentoconnect/inject.css"
+      ]
     }
   ]
 }

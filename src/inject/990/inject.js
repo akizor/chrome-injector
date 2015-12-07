@@ -24,6 +24,12 @@ chrome.extension.sendMessage({}, function(response) {
 				}
 			}
 		}
+
+		/* remove .overlay class from above videos */
+		var overlay = document.getElementsByClassName('overlay');
+		if(overlay && overlay.length){
+			overlay[0].parentElement.removeChild(overlay[0])
+		}
 		/* end adf.ly url changer */
 	}
 	}, 10);
